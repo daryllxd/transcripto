@@ -1,15 +1,17 @@
+# frozen_string_literal: true
 source 'https://rubygems.org'
 
 ruby '2.4.1'
 
 # Rails default gems
-gem 'rails', '5.0.2'
 gem 'annotate', '~> 2.7', '>= 2.7.1'
+gem 'bootsnap', require: false
 gem 'dotenv', require: false
 gem 'memoist'
 gem 'pg', '0.19.0'
 gem 'powerpack'
 gem 'rack-cors', require: 'rack/cors'
+gem 'rails', '5.0.2'
 gem 'rake', '11.3.0'
 gem 'redcarpet', '3.4.0'
 gem 'slim-rails'
@@ -19,14 +21,14 @@ gem 'thin'
 group :development, :test do
   gem 'bullet', '5.5.1'
   gem 'clipboard'
+  gem 'codeclimate-test-reporter', require: false
   gem 'factory_girl_rails'
   gem 'faker', '~> 1.7.3'
-  gem 'codeclimate-test-reporter', require: false
-  gem 'rspec', '3.5.0'
-  gem 'rspec-rails'
-  gem 'rb-readline'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'rb-readline'
+  gem 'rspec', '3.5.0'
+  gem 'rspec-rails'
   gem 'spring'
 end
 
@@ -41,8 +43,8 @@ group :development do
   gem 'lol_dba', '2.1.4'
   gem 'rails_layout'
   gem 'rubocop', require: false
-  gem 'web-console', '~> 2.0'
   gem 'spring-commands-rspec'
+  gem 'web-console', '~> 2.0'
 end
 
 group :test do
@@ -59,4 +61,3 @@ group :test do
   gem 'test-prof', '0.4.0', require: false
   gem 'timecop', require: false
 end
-
