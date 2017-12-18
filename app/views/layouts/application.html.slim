@@ -7,15 +7,17 @@ html
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Transcripto'}"
     == stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"
     == stylesheet_link_tag "https://afeld.github.io/emoji-css/emoji.css"
-    == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => 'reload'
+    == javascript_pack_tag 'application'
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+    == stylesheet_pack_tag 'styles/app'
     == csrf_meta_tags
   body.skin-blue.sidebar-mini.sidebar-collapse(style="height: auto;")
-    .wrapper
+    section.section
       == render 'shared_views/navigation'
-      == render 'shared_views/sidebar'
-      .content-wrapper
-        == render 'layouts/messages'
-        .content
-          == yield
+      .columns
+        == render 'shared_views/sidebar'
+        .content-wrapper
+          == render 'layouts/messages'
+          .content
+            == yield
       == render 'shared_views/footer'
