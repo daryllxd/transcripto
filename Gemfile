@@ -19,7 +19,7 @@ gem 'redcarpet', '3.4.0'
 gem 'slim-rails'
 gem 'stateful_enum'
 gem 'thin'
-gem 'webpacker', '3.0'
+gem 'webpacker', '3.0.2'
 
 group :development, :test do
   gem 'bullet', '5.5.1'
