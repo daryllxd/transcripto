@@ -8,6 +8,7 @@ gem 'annotate', '~> 2.7', '>= 2.7.1'
 gem 'bootsnap', require: false
 gem 'dotenv', require: false
 gem 'memoist'
+gem 'nokogiri', '1.8.1'
 gem 'pg', '0.19.0'
 gem 'powerpack'
 gem 'rack-cors', require: 'rack/cors'
@@ -42,7 +43,7 @@ group :development do
   gem 'capistrano-thin', '~> 1.2.0'
   gem 'lol_dba', '2.1.4'
   gem 'rails_layout'
-  gem 'rubocop', require: false
+  gem 'rubocop', '0.52.0', require: false
   gem 'spring-commands-rspec'
   gem 'web-console', '~> 2.0'
 end
