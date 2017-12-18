@@ -11,13 +11,11 @@ html
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     == stylesheet_pack_tag 'styles/app'
     == csrf_meta_tags
-  body.skin-blue.sidebar-mini.sidebar-collapse(style="height: auto;")
-    section.section
+  body.Site
+    section.Site-Content.section
       == render 'shared_views/navigation'
+      == render 'layouts/messages'
       .columns
-        == render 'shared_views/sidebar'
-        .content-wrapper
-          == render 'layouts/messages'
           .content
             == yield
-      == render 'shared_views/footer'
+    == render 'shared_views/footer'
