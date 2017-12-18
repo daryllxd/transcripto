@@ -5,9 +5,10 @@ ruby '2.4.1'
 
 # Rails default gems
 gem 'annotate', '~> 2.7', '>= 2.7.1'
-gem 'bootsnap', require: false
-gem 'dotenv', require: false
-gem 'memoist'
+gem 'bootsnap', '1.1.7', require: false
+gem 'devise', '4.3.0'
+gem 'dotenv', '2.2.1', require: false
+gem 'memoist', '0.16.0'
 gem 'nokogiri', '1.8.1'
 gem 'pg', '0.19.0'
 gem 'powerpack'

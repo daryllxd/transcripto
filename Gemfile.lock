@@ -54,6 +54,7 @@ GEM
       rspec-expectations (>= 2.99)
       thor (~> 0.19)
     ast (2.3.0)
+    bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -113,9 +114,15 @@ GEM
     database_cleaner (1.5.3)
     db-query-matchers (0.8.0)
     debug_inspector (0.0.2)
+    devise (4.3.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.2)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.3)
     docile (1.1.5)
-    dotenv (2.1.1)
+    dotenv (2.2.1)
     erubi (1.7.0)
     erubis (2.7.0)
     eventmachine (1.2.2)
@@ -164,6 +171,7 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
+    orm_adapter (0.5.0)
     parallel (1.12.1)
     parser (2.4.0.2)
       ast (~> 2.3)
@@ -211,6 +219,9 @@ GEM
     rake (11.3.0)
     rb-readline (0.5.4)
     redcarpet (3.4.0)
+    responders (2.4.0)
+      actionpack (>= 4.2.0, < 5.3)
+      railties (>= 4.2.0, < 5.3)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
@@ -288,6 +299,8 @@ GEM
       thread_safe (~> 0.1)
     unicode-display_width (1.3.0)
     uniform_notifier (1.10.0)
+    warden (1.2.7)
+      rack (>= 1.0)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -304,7 +317,7 @@ DEPENDENCIES
   annotate (~> 2.7, >= 2.7.1)
   aruba (= 0.14.2)
   better_errors
-  bootsnap
+  bootsnap (= 1.1.7)
   bullet (= 5.5.1)
   capistrano (~> 3.6.1)
   capistrano-bundler
@@ -316,14 +329,15 @@ DEPENDENCIES
   codeclimate-test-reporter
   database_cleaner
   db-query-matchers
-  dotenv
+  devise (= 4.3.0)
+  dotenv (= 2.2.1)
   factory_girl_rails
   faker (~> 1.7.3)
   fuubar (= 2.2.0)
   json_spec (= 1.1.4)
   launchy
   lol_dba (= 2.1.4)
-  memoist
+  memoist (= 0.16.0)
   nokogiri (= 1.8.1)
   pg (= 0.19.0)
   powerpack
