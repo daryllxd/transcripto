@@ -1,2 +1,5 @@
 public/api-docs
 client/bower_components
+public/packs
+public/packs-test
+node_modules
