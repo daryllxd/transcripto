@@ -19,6 +19,7 @@ gem 'redcarpet', '3.4.0'
 gem 'slim-rails'
 gem 'stateful_enum'
 gem 'thin'
+gem 'webpacker', '3.0'
 
 group :development, :test do
   gem 'bullet', '5.5.1'
@@ -46,7 +47,7 @@ group :development do
   gem 'rails_layout'
   gem 'rubocop', '0.52.0', require: false
   gem 'spring-commands-rspec'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '3.5.1'
 end
 
 group :test do
