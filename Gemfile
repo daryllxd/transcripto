@@ -8,6 +8,7 @@ gem 'annotate', '~> 2.7', '>= 2.7.1'
 gem 'bootsnap', '1.1.7', require: false
 gem 'devise', '4.3.0'
 gem 'dotenv', '2.2.1', require: false
+gem 'high_voltage', '3.0.0'
 gem 'memoist', '0.16.0'
 gem 'nokogiri', '1.8.1'
 gem 'pg', '0.19.0'
