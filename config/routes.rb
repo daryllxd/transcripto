@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   post 'graphql' => 'graphqls#create'
   get '/pages/*id' => 'pages#show', as: :page, format: false
 
+  resource :dashboard, only: :show
+
   root 'pages#index'
 end
