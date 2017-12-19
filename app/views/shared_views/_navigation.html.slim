@@ -1,17 +1,15 @@
-header.level
-  div.level-item.has-text-centered
-    div
-      p.heading Home
-      p.title WOW
-  div.level-item.has-text-centered
-    div
-      p.heading Home
-      p.title WOW
-  div.level-item.has-text-centered
-    div
-      p.heading Home
-      p.title WOW
-  div.level-item.has-text-centered
-    div
-      p.heading Home
-      p.title WOW
+header.level.Site-Header
+  div.level-item.hero.is-dark.has-text-centered
+    nav.level.hero-body
+      .level-left
+        .level-item
+          p.heading
+            = link_to('Programming Talk Summaries', root_path)
+      .level-right
+        .level-item
+          p.heading
+            - if user_signed_in?
+              = link_to('Log Out', destroy_user_session_path)
+            - else
+              = link_to('Log In', new_user_session_path)
+
