@@ -10,12 +10,13 @@ html
     == javascript_pack_tag 'application'
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     == stylesheet_pack_tag 'styles/app'
+    == stylesheet_link_tag 'https://unpkg.com/bulmaswatch/flatly/bulmaswatch.min.css'
     == csrf_meta_tags
   body.Site
-    section.Site-Content.section
-      == render 'shared_views/navigation'
-      == render 'layouts/messages'
-      .columns
-          .content
-            == yield
+    == render 'shared_views/navigation'
+    section.Site-Content
+      .section
+        .container
+          == render 'layouts/messages'
+          == yield
     == render 'shared_views/footer'
