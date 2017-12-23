@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171219150814) do
+ActiveRecord::Schema.define(version: 20171223175122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "transcripts", id: :serial, force: :cascade do |t|
+  create_table "talk_summaries", force: :cascade do |t|
     t.string "title", null: false
     t.string "video_url", null: false
     t.string "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "created_by_user_id", null: false
-    t.index ["created_by_user_id"], name: "index_transcripts_on_created_by_user_id"
+    t.index ["created_by_user_id"], name: "index_talk_summaries_on_created_by_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,5 +43,5 @@ ActiveRecord::Schema.define(version: 20171219150814) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "transcripts", "users", column: "created_by_user_id"
+  add_foreign_key "talk_summaries", "users", column: "created_by_user_id"
 end

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
-RSpec.describe Transcripts::CreateService, type: :service do
+RSpec.describe TalkSummaries::CreateService, type: :service do
   context 'happy path' do
     it 'works' do
       alice = create(:user)
 
-      new_transcript_attributes = {
+      new_talk_summary_attributes = {
         created_by_user: alice,
         title: 'Atlantis',
         video_url: 'youtube.com/atlantis',
@@ -14,16 +14,16 @@ RSpec.describe Transcripts::CreateService, type: :service do
         SENTINEL
       }
 
-      created_transcript = execute.call(new_transcript_attributes)
+      created_talk_summary = execute.call(new_talk_summary_attributes)
 
-      expect(created_transcript).to be_valid
-      expect(created_transcript.created_by_user).to eq(alice)
+      expect(created_talk_summary).to be_valid
+      expect(created_talk_summary.created_by_user).to eq(alice)
     end
   end
 
   context 'errors' do
     it 'raises an error' do
-      bad_new_transcript_attributes = {
+      bad_new_talk_summary_attributes = {
         created_by_user: nil,
         title: nil,
         video_url: 'youtube.com/atlantis',
@@ -33,7 +33,7 @@ RSpec.describe Transcripts::CreateService, type: :service do
         SENTINEL
       }
 
-      expect { execute.call(bad_new_transcript_attributes) }.to raise_error(ActiveRecord::RecordInvalid)
+      expect { execute.call(bad_new_talk_summary_attributes) }.to raise_error(ActiveRecord::RecordInvalid)
     end
   end
 end
