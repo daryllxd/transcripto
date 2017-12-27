@@ -22,7 +22,7 @@ RSpec.describe TalkSummaries::CreateService, type: :service do
   end
 
   context 'errors' do
-    it 'raises an error' do
+    it 'returns invalid' do
       bad_new_talk_summary_attributes = {
         submitted_by_user: nil,
         title: nil,
@@ -33,7 +33,9 @@ RSpec.describe TalkSummaries::CreateService, type: :service do
         SENTINEL
       }
 
-      expect { execute.call(bad_new_talk_summary_attributes) }.to raise_error(ActiveRecord::RecordInvalid)
+      invalid_talk_summary = execute.call(bad_new_talk_summary_attributes)
+
+      expect(invalid_talk_summary).not_to be_valid
     end
   end
 end

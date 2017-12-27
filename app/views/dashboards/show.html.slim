@@ -1,2 +1,24 @@
 .content
   h1 Dashboard
+.content
+  h3 Your Summaries
+  - @talk_summaries.each do |talk_summary|
+    p= talk_summary.title
+.content
+  = form_with(model: TalkSummary.new) do |form|
+    h3 Upload a Talk Summary
+    .field
+      label.label Video URL
+      .control
+        = form.text_field(:video_url, class: 'input', placeholder: 'Video URL')
+    .field
+      label.label Talk Title
+      .control
+        = form.text_field(:title, class: 'input', placeholder: 'Talk title')
+    .field
+      label.label Talk Summary
+      .control
+        = form.text_area(:body, class: 'textarea', placeholder: "Write your talk summary here.")
+    .field.is-grouped
+      .control
+        = submit_tag('Submit', class: 'button is-primary')

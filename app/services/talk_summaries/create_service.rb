@@ -11,7 +11,7 @@ module TalkSummaries
     end
 
     def call
-      TalkSummary.create!(
+      TalkSummary.create(
         submitted_by_user: submitted_by_user,
         title: title,
         video_url: video_url,
