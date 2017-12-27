@@ -15,7 +15,8 @@ module TalkSummaries
         submitted_by_user: submitted_by_user,
         title: title,
         video_url: video_url,
-        body: body
+        body: body,
+        submitted_at: Time.current
       )
     end
   end

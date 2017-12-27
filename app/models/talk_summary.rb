@@ -10,6 +10,7 @@
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  submitted_by_user_id :integer          not null
+#  submitted_at         :datetime         not null
 #
 # Indexes
 #
