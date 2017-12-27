@@ -6,5 +6,5 @@ RSpec.describe TalkSummary, type: :model do
   it  { should validate_presence_of(:video_url) }
 
   # Associations
-  it  { should belong_to(:created_by_user) }
+  it  { should belong_to(:submitted_by_user) }
 end

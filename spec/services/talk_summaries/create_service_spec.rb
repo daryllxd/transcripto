@@ -5,7 +5,7 @@ RSpec.describe TalkSummaries::CreateService, type: :service do
       alice = create(:user)
 
       new_talk_summary_attributes = {
-        created_by_user: alice,
+        submitted_by_user: alice,
         title: 'Atlantis',
         video_url: 'youtube.com/atlantis',
         body: <<~SENTINEL
@@ -17,14 +17,14 @@ RSpec.describe TalkSummaries::CreateService, type: :service do
       created_talk_summary = execute.call(new_talk_summary_attributes)
 
       expect(created_talk_summary).to be_valid
-      expect(created_talk_summary.created_by_user).to eq(alice)
+      expect(created_talk_summary.submitted_by_user).to eq(alice)
     end
   end
 
   context 'errors' do
     it 'raises an error' do
       bad_new_talk_summary_attributes = {
-        created_by_user: nil,
+        submitted_by_user: nil,
         title: nil,
         video_url: 'youtube.com/atlantis',
         body: <<~SENTINEL

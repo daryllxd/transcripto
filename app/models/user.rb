@@ -28,4 +28,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :submitted_talk_summaries, class_name: 'TalkSummary', foreign_key: 'submitted_by_user_id'
 end

@@ -2,5 +2,16 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_many(:submitted_talk_summaries) }
+
+  context 'queries' do
+    it 'talk_summaries' do
+      alice = create(:user)
+      talk_summary = create(:talk_summary, submitted_by_user: alice)
+
+      expect(alice.submitted_talk_summaries).to match_array(
+        [talk_summary]
+      )
+    end
+  end
 end
