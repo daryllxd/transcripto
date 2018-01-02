@@ -4,5 +4,9 @@ FactoryGirl.define do
     video_url { 'Pants' }
     title { 'Pants' }
     body { '## Pants' }
+
+    trait :just_pass_validation do
+      submitted_at { Time.current }
+    end
   end
 end

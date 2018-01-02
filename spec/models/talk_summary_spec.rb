@@ -7,4 +7,5 @@ RSpec.describe TalkSummary, type: :model do
 
   # Associations
   it  { should belong_to(:submitted_by_user) }
+  it  { should belong_to(:talk) }
 end
