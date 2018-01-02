@@ -1,19 +1,12 @@
 .columns
   .column
     .content.has-text-centered
-      h1 Featured Talk: Ruby Midwest 2011: Architecture, the Lost Years by Robert Martin
+      h1= @featured_talk_summary.title
       iframe allow="encrypted-media" allowfullscreen="" frameborder="0" gesture="media" height="480" src="https://www.youtube.com/embed/WpkDN78P884" width="854" 
 .columns
   .column
-    p If I did not tell you that this is not a Rails app, would you recognize that this is not a Rails app? Nothing in the top level talks about what the application does. Apparently, the most important part of teh application is the framework behind it. But the web is a *delivery mechanism*. It is a pipe. It is not the central thing, it is just the dumb detail. And yet it dominates our code. We know that a web app is a web app because of a `controllers` directory because no other type of application has controllers, views, and models.
-    br
-    p The top-level architecture SCREAMS its intent at you. The top-level of a Rails app reflects the delivery mech, not the intent. Isn't architecture about intent?
-    br
-    p Interactors have application specific business rules. They aren't in the framework. So you have entities which represent business objects. These business objects span more than one application. So you want application-agnostic business rules in your entities. *Entity things should not know about the database and the delivery mechanisms.* So we have to have *boundaries* or interfaces. So we have a whole bunch of interactors which represent use cases, a whole bunch of entities, each of which represents a business object, and all of the business rules go in here.
-    br
-    p
-      strong Database.&nbsp;
-      | Unfortunately we see the database at the center of the application. The database is a detail, something you don't know about. It must "somehow store things". I don't care how it stores them. I want objects and entities out of the database. I want to defer the interactions to the database.
+    .content
+      = Utilities::Markdown.new(text: @featured_talk_summary.body).call
 .columns
   .column
     .content
