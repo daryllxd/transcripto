@@ -8,8 +8,6 @@ RSpec.describe TalkSummaries::CreateService, type: :service do
       new_talk_summary_attributes = {
         submitted_by_user: alice,
         talk: talk,
-        title: 'Atlantis',
-        video_url: 'youtube.com/atlantis',
         body: <<~SENTINEL
           ## Hello
           Atlantis
@@ -26,14 +24,9 @@ RSpec.describe TalkSummaries::CreateService, type: :service do
   context 'errors' do
     it 'returns invalid' do
       bad_new_talk_summary_attributes = {
-        submitted_by_user: nil,
-        talk: nil,
-        title: nil,
-        video_url: 'youtube.com/atlantis',
-        body: <<~SENTINEL
-          ## Hello
-          Atlantis
-        SENTINEL
+        submitted_by_user: create(:user, :alice),
+        talk: create(:talk),
+        body: nil
       }
 
       invalid_talk_summary = execute.call(bad_new_talk_summary_attributes)
