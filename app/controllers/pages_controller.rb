@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
   def index
     @talk_summaries = TalkSummary.all
-    @featured_talk_summary = TalkSummary.last
+    @featured_talk_summary = TalkSummary.last || NullTalkSummary.new
     redirect_to dashboard_path if user_signed_in?
   end
 end
