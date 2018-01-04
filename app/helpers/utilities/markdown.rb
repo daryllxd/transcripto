@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
+class CodeRayify < Redcarpet::Render::HTML
+  def block_code(code, language)
+    CodeRay.scan(code, language).div
+  end
+end
+
 module Utilities
   class Markdown
     attr_reader :text
@@ -9,7 +15,7 @@ module Utilities
     end
 
     def call
-      renderer = Redcarpet::Render::HTML.new(options)
+      renderer = CodeRayify.new(options)
       markdown = Redcarpet::Markdown.new(renderer, extensions)
 
       markdown.render(text).html_safe
@@ -30,8 +36,12 @@ module Utilities
     def extensions
       {
         autolink: true,
-        superscript: true,
-        disable_indented_code_blocks: true
+        disable_indented_code_blocks: true,
+        fenced_code_blocks: true,
+        lax_html_blocks: true,
+        no_intra_emphasis: true,
+        strikethrough: true,
+        superscript: true
       }
     end
   end

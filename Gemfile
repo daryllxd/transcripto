@@ -7,6 +7,7 @@ gem 'dotenv-rails', '2.2.1'
 # Rails default gems
 gem 'annotate', '~> 2.7', '>= 2.7.1'
 gem 'bootsnap', '1.1.7', require: false
+gem 'coderay', '1.1.2'
 gem 'devise', '4.3.0'
 gem 'high_voltage', '3.0.0'
 gem 'memoist', '0.16.0'
