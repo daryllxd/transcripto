@@ -36,10 +36,10 @@ RSpec.describe Utilities::Markdown, type: :service do
       )
     end
 
-    it 'with CodeRay-it also works' do
+    it 'with CodeRay-it also works, but defaults to Ruby' do
       sample_code = {
         text: <<~SENTINEL
-          ``` ruby
+          ```
             def hello
               1 + 'haha'
             end
