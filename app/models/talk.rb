@@ -17,4 +17,8 @@ class Talk < ApplicationRecord
   validates :video_url, presence: true
   validates :presenter, presence: true
   validates :event, presence: true
+
+  def youtube_embed_url
+    video_url.gsub(/watch\?v=/, 'embed/')
+  end
 end

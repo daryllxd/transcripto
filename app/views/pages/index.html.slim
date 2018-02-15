@@ -2,7 +2,7 @@
   .column
     .content.has-text-centered
       h1= @featured_talk_summary.talk.title
-      iframe allow="encrypted-media" allowfullscreen="" frameborder="0" gesture="media" height="480" src="https://www.youtube.com/embed/WpkDN78P884" width="854" 
+      iframe allow="encrypted-media" allowfullscreen="" frameborder="0" gesture="media" height="480" src="#{@featured_talk_summary.talk.youtube_embed_url}" width="854" 
 .columns
   .column
     .content
