@@ -3,7 +3,7 @@
 .content
   h3 Your Summaries
   - @talk_summaries.each do |talk_summary|
-    p= talk_summary.title
+    p= talk_summary.talk.title
 .content
   = form_with(model: TalkSummary.new) do |form|
     h3 Upload a Talk Summary

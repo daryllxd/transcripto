@@ -1,23 +1,20 @@
 .columns
   .column
     .content.has-text-centered
-      h1= @featured_talk_summary.title
+      h1= @featured_talk_summary.talk.title
       iframe allow="encrypted-media" allowfullscreen="" frameborder="0" gesture="media" height="480" src="https://www.youtube.com/embed/WpkDN78P884" width="854" 
 .columns
   .column
     .content
       = Utilities::Markdown.new(text: @featured_talk_summary.body).call
+/ <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
 .columns
   .column
     .content
       h2 All Talks
       ul
         li
-          a(href='#') Ben Orenstein: Frequently Asked Questions
-        li
           a(href='#') Ben Orenstein: How to Talk to Developers
-        li
-          a(href='#') Gary Bernhardt: Deconstructing the Framework
         li
           a(href='#') Sandi Metz: Solid Objected Oriented Design
         li
