@@ -24,6 +24,7 @@
 
 class TalkSummary < ApplicationRecord
   validates :body, presence: true
+  validates :submitted_at, presence: true
 
   belongs_to :submitted_by_user, class_name: 'User'
   belongs_to :talk

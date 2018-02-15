@@ -5,6 +5,8 @@ class NullTalkSummary
   end
 
   def body
-    'There have been no talks yet.'
+    <<~SENTINEL
+      There have been no talks yet.
+    SENTINEL
   end
 end
