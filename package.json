@@ -2,7 +2,9 @@
   "dependencies": {
     "@rails/webpacker": "^3.2.0",
     "babel-preset-react": "^6.24.1",
-    "bulma": "^0.6.1",
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9",
     "postcss-import": "^11.0.0",
     "postcss-smart-import": "^0.7.6",
     "prop-types": "^15.6.0",
