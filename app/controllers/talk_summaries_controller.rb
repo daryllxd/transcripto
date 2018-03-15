@@ -15,7 +15,11 @@ class TalkSummariesController < ApplicationController
   end
 
   def index
-    @talk_summaries = TalkSummary.all
+    @talk_summaries = TalkSummary.includes(:talk).all
+  end
+
+  def show
+    @talk_summary = TalkSummary.find(params[:id])
   end
 
   private
