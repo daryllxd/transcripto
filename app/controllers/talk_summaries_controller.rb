@@ -14,6 +14,10 @@ class TalkSummariesController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def index
+    @talk_summaries = TalkSummary.all
+  end
+
   private
 
   def permitted_create_params

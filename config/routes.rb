@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/pages/*id' => 'pages#show', as: :page, format: false
 
   resource :dashboard, only: :show
-  resources :talk_summaries, only: :create
+  resources :talk_summaries, only: %w[create index]
 
   namespace :talk_summaries do
     resource :top

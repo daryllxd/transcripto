@@ -28,4 +28,6 @@ class TalkSummary < ApplicationRecord
 
   belongs_to :submitted_by_user, class_name: 'User'
   belongs_to :talk
+
+  delegate :title, to: :talk
 end
