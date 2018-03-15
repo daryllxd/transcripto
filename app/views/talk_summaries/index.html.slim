@@ -1,15 +1,16 @@
-h1 All Talks
+.container
+  h1 All Talks
 
-table.table
-  thead
-    tr
-      th Talk Title
-      th Presenter
-      th Conference
-  tbody
-    - @talk_summaries.each do |talk_summary|
+  table.table
+    thead
       tr
-        td
-          = link_to(talk_summary.title, talk_summary_path(talk_summary.id))
-        td= talk_summary.presenter
-        td= talk_summary.event
+        th Talk Title
+        th Presenter
+        th Conference
+    tbody
+      - @talk_summaries.each do |talk_summary|
+        tr
+          td
+            = link_to(talk_summary.title, talk_summary_path(talk_summary.id))
+          td= talk_summary.presenter
+          td= talk_summary.event

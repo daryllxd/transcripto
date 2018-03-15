@@ -7,9 +7,9 @@ nav.Site-Header.navbar.navbar-expand-lg.navbar-dark.bg-dark
       li(class="#{active_nav_class(root_path)}")
         = link_to('Home', root_path, class: 'nav-link')
       li(class="#{active_nav_class(talk_summaries_top_path)}")
+        = link_to('All', talk_summaries_path, class: 'nav-link')
+      li(class="#{active_nav_class(talk_summaries_top_path)}")
         = link_to('Top', talk_summaries_top_path, class: 'nav-link')
-      li.nav-item
-        a.nav-link href="#" Trending
       li.nav-item
         a.nav-link href="#" About
     div

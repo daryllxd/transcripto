@@ -15,7 +15,6 @@ html
     == render 'shared_views/navigation'
     section.Site-Content
       .section
-        .container
-          == render 'layouts/messages'
-          == yield
+        == render 'layouts/messages'
+        == yield
     == render 'shared_views/footer'
