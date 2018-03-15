@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   resource :dashboard, only: :show
   resources :talk_summaries, only: :create
 
+  namespace :talk_summaries do
+    resource :top
+  end
+
   root 'pages#index'
 end
