@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/MethodLength
 module MigrationScripts
   class SeedInitialTalks
     def seed
-      first_user = User.first
+      first_user = User.first_or_create(email: 'user@gmail.com', password: 'user@gmail.com')
 
       seeded_talk_file_locations = Dir['db/seeded_talks/*.md']
 
@@ -32,3 +33,4 @@ module MigrationScripts
     end
   end
 end
+# rubocop:enable Metrics/MethodLength
