@@ -1,3 +1,8 @@
+Style/StringLiterals:
+  Exclude:
+    - 'config/deploy.rb'
+    - 'config/deploy/production.rb'
+
 Metrics/AbcSize:
   Max: 25
   Exclude:
