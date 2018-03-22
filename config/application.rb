@@ -9,7 +9,8 @@ Bundler.require(*Rails.groups)
 
 module Transcripto
   class Application < Rails::Application
-    config.autoload_paths += %W(#{config.root}/lib #{Rails.root.join('app', 'graphs', 'types')})
+    config.autoload_paths += %W[#{config.root}/lib #{Rails.root.join('app', 'graphs', 'types')}]
+    config.eager_load_paths << Rails.root.join('lib')
 
     config.generators do |g|
       g.test_framework(:rspec, fixtures: true, view_specs: false, helper_specs: false,
@@ -33,7 +34,7 @@ module Transcripto
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '*', headers: :any, methods: [:get, :post, :options]
+        resource '*', headers: :any, methods: %i[get post options]
       end
     end
   end
