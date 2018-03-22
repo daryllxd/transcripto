@@ -21,7 +21,7 @@ gem 'rake', '11.3.0'
 gem 'redcarpet', '3.4.0'
 gem 'slim-rails'
 gem 'stateful_enum'
-gem 'webpacker', '3.0.2'
+gem 'webpacker', '~> 3.3.1'
 gem 'yt'
 
 group :development, :test do
