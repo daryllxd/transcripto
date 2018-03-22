@@ -28,6 +28,7 @@ install_plugin Capistrano::SCM::Git
 #   https://github.com/capistrano/passenger
 #
 require "capistrano/rvm"
+require "capistrano/npm"
 require "capistrano/puma"
 install_plugin Capistrano::Puma  # Default puma tasks
 # require "capistrano/rbenv"
