@@ -7,7 +7,6 @@ html
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Transcripto'}"
     == stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"
     == stylesheet_link_tag "https://afeld.github.io/emoji-css/emoji.css"
-    == javascript_pack_tag 'hello_react'
     == javascript_pack_tag 'application'
     == stylesheet_pack_tag 'styles/app'
     == csrf_meta_tags
