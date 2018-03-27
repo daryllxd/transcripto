@@ -4,9 +4,8 @@ html
     = render 'shared_views/meta'
   body.Site
     == render 'shared_views/navigation'
-    .container
-      section.Site-Content
-        .section
-          == render 'layouts/messages'
-          == yield
+    section.Site-Content
+      .section
+        == render 'layouts/messages'
+        == yield
     == render 'shared_views/footer'

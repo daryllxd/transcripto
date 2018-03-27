@@ -1,11 +1,10 @@
-.container
-  h1 Top Talks
-  - @top_talks.each do |talk|
-    p
-      strong= talk[:title]
-      | &nbsp;#{talk[:speaker]}
-    p
-      - talk[:tags].each do |tag|
-        span.badge.badge-pill.badge-primary.mr-1= tag
-    p= talk[:summary]
+h1 Top Talks
+- @top_talks.each do |talk|
+  p
+    strong= talk[:title]
+    | &nbsp;#{talk[:speaker]}
+  p
+    - talk[:tags].each do |tag|
+      span.badge.badge-pill.badge-primary.mr-1= tag
+  p= talk[:summary]
 
